@@ -18,13 +18,17 @@ public class Game {
 	private Long id;
 	private String title;
 	
-	@Column(name = "game_year")
+	@Column(name = "game_year") //renomeando o atributo year para não dar conflito no sql
 	private Integer year;
 	private String genre;
-	private String plataforms;
+	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT") // alterando o tipo para texto
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT") // alterando o tipo para texto
 	private String longDescription;
 	
 	
@@ -33,14 +37,14 @@ public class Game {
 	}
 
 
-	public Game(Long id, String title, Integer year, String genre, String plataforms, Double score, String imgUrl,
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.plataforms = plataforms;
+		this.platforms = platforms;
 		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
@@ -88,13 +92,13 @@ public class Game {
 	}
 
 
-	public String getPlataforms() {
-		return plataforms;
+	public String getplatforms() {
+		return platforms;
 	}
 
 
-	public void setPlataforms(String plataforms) {
-		this.plataforms = plataforms;
+	public void setplatforms(String platforms) {
+		this.platforms = platforms;
 	}
 
 
@@ -158,8 +162,8 @@ public class Game {
 
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", title=" + title + ", year=" + year + ", genre=" + genre + ", plataforms="
-				+ plataforms + ", score=" + score + ", imgUrl=" + imgUrl + ", shortDescription=" + shortDescription
+		return "Game [id=" + id + ", title=" + title + ", year=" + year + ", genre=" + genre + ", platforms="
+				+ platforms + ", score=" + score + ", imgUrl=" + imgUrl + ", shortDescription=" + shortDescription
 				+ ", longDescription=" + longDescription + "]";
 	}
 	
